@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useRef } from "react";
 
 const FY_MONTHS = [
   { label: "April 2025",     short: "April'25",     key: "apr25", totalDays: 30, period: "01.04.2025 to 30.04.2025" },
@@ -103,12 +103,12 @@ export default function App() {
     btn: { background: "linear-gradient(135deg,#1d4ed8,#6d28d9)", border: "none", color: "#fff", padding: "9px 20px", borderRadius: 8, fontWeight: 600, fontSize: 12.5, cursor: "pointer", display: "inline-flex", alignItems: "center", gap: 7 },
   };
 
-  const Field = React.memo(({ label, val, onChange, type = "text" }) => (
+  const Field = ({ label, val, onChange, type = "text" }) => (
     <div>
       <label style={dark.lbl}>{label}</label>
-      <input style={dark.inp} type={type} value={val} onInput={e => onChange(e.target.value)} />
+      <input style={dark.inp} type={type} value={val} onChange={e => onChange(e.target.value)} />
     </div>
-  ));
+  );
 
   // ─── ATTENDANCE TAB ─────────────────────────────────────────────────────────
   const AttTab = () => (
