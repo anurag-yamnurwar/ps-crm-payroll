@@ -60,7 +60,7 @@ export default function App() {
   const [sal, setSal] = useState(DEFAULT_SAL);
   const [kpi, setKpi] = useState(DEFAULT_KPI);
   const [att, setAtt] = useState(DEFAULT_ATT);
-  const [savedPay, setSavedPay] = useState(SAVED_PAY);
+  const [savedPay] = useState(SAVED_PAY);
   const [selMonth, setSelMonth] = useState("mar26");
   const [varPay, setVarPay] = useState({ enquiry: 0, product: 0, performance: 0, travel: 0, bonus: 0 });
   const [travelKM, setTravelKM] = useState(0);
